@@ -283,12 +283,75 @@
 
       <ol class="release-list" aria-label="Release history" reversed>
 
+        <!-- v1.0.6 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.6</span>
+            <span class="release-date">March 28, 2026</span>
+            <span class="release-badge badge-latest">Latest</span>
+            <span class="release-badge badge-feature">Feature</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.6 changes">
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Hover actions on video cards — hovering a card now reveals two icon buttons: ✎ (edit) and ✕ (delete), hidden by default and fading in on hover so the card layout stays clean during normal browsing.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Quick edit form on card — clicking ✎ opens an inline overlay with pre-filled title and YouTube URL inputs. Escape cancels, Enter or Save commits. No need to open the theater modal to fix a typo or wrong URL.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Edit video URL — the URL field in the quick edit form is fully editable. Changing it re-derives the video ID, thumbnail, and resets the offline download state on the backend.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Delete confirm on hover — clicking ✕ shows the same confirmation dialog as inside the theater modal, directly on the card.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>YouTube iframe embed replaced with thumbnail + external link — the theater modal now shows the video thumbnail with a "Watch on YouTube" button that opens the video in the system browser, avoiding cross-origin embed errors (Error 153).</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Changing a video's YouTube URL now correctly updates the thumbnail shown on the card (previously only the title could be changed and the thumbnail stayed stale).</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.6"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.6 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+        <!-- v1.0.5 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.5</span>
+            <span class="release-date">March 28, 2026</span>
+            <span class="release-badge" style="background-color:rgba(210,153,34,0.15);color:var(--orange)">Performance</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.5 changes">
+            <li class="release-item">
+              <span class="release-item-type type-perf">perf</span>
+              <span>Startup time reduced by 1–3 seconds on every launch after the first. The server now hashes all migration filenames and skips the Django migrate step entirely when nothing has changed — the hash is stored in <code>.migration_version</code> in the user data directory and updated only after a successful migrate.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.5"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.5 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
         <!-- v1.0.4 -->
         <li class="release">
           <div class="release-header">
             <span class="release-version">v1.0.4</span>
             <span class="release-date">March 28, 2026</span>
-            <span class="release-badge badge-latest">Latest</span>
             <span class="release-badge badge-fix">Bug fix</span>
           </div>
           <ul class="release-items" aria-label="v1.0.4 changes">
