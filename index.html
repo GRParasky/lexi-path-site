@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>LexiPath — Offline YouTube Learning App for Desktop</title>
+  <meta name="description"
+        content="LexiPath is a free, open-source offline YouTube learning app. Build learning paths from YouTube playlists, download videos for offline playback, and study without internet. Available for Windows, macOS, and Linux." />
+  <link rel="canonical" href="https://grparasky.github.io/lexi-path-site/" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://grparasky.github.io/lexi-path-site/" />
+  <meta property="og:title"       content="LexiPath — Offline YouTube Learning App" />
+  <meta property="og:description" content="Build learning paths from YouTube playlists. Download videos for offline playback. Free, open-source, no account needed." />
+  <meta property="og:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+  <meta property="og:image:width"  content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:site_name"   content="LexiPath" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="LexiPath — Offline YouTube Learning App" />
+  <meta name="twitter:description" content="Build learning paths from YouTube playlists. Download videos for offline playback. Free, open-source, no account needed." />
+  <meta name="twitter:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "LexiPath",
+    "applicationCategory": "EducationApplication",
+    "operatingSystem": "Windows, macOS, Linux",
+    "description": "LexiPath is a free, open-source offline YouTube learning app. Build learning paths from YouTube playlists and download videos for offline playback.",
+    "url": "https://grparasky.github.io/lexi-path-site/",
+    "downloadUrl": "https://github.com/GRParasky/lexi-path-desktop/releases/latest",
+    "softwareVersion": "1.0.3",
+    "releaseNotes": "https://github.com/GRParasky/lexi-path-desktop/blob/master/CHANGELOG.md",
+    "license": "https://github.com/GRParasky/lexi-path-desktop/blob/master/LICENSE",
+    "author": {
+      "@type": "Person",
+      "name": "GRParasky",
+      "url": "https://github.com/GRParasky"
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "featureList": [
+      "Offline video playback",
+      "Learning path builder",
+      "YouTube playlist import",
+      "Multi-language interface",
+      "Auto-update",
+      "No account required",
+      "Cross-platform"
+    ]
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header role="banner">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+
+        <a href="#hero" class="nav-logo" aria-label="LexiPath — back to top">
+          🎓 LexiPath
+        </a>
+
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Open navigation menu"
+        >
+          <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" aria-hidden="true" hidden>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <ul id="nav-links" class="nav-links" role="list">
+          <li><a href="#features"     data-i18n="nav.features">Features</a></li>
+          <li><a href="#download"     data-i18n="nav.download">Download</a></li>
+          <li><a href="#contributors" data-i18n="nav.contribute">Contribute</a></li>
+          <li><a href="#issues"       data-i18n="nav.issues">Issues</a></li>
+          <li class="nav-lang-item">
+            <select id="lang-select" class="lang-select" aria-label="Select language">
+              <option value="en">🇺🇸 English</option>
+              <option value="pt-BR">🇧🇷 Português (BR)</option>
+              <option value="es">🇪🇸 Español</option>
+              <option value="de">🇩🇪 Deutsch</option>
+              <option value="it">🇮🇹 Italiano</option>
+              <option value="fr">🇫🇷 Français</option>
+            </select>
+          </li>
+          <li>
+            <a href="#download" class="nav-cta" aria-label="Download LexiPath"
+               data-i18n="nav.cta">Download</a>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+    <section id="hero" class="hero" aria-labelledby="hero-heading">
+      <div class="container">
+
+        <div class="hero-badge" aria-hidden="true">
+          <span class="dot"></span>
+          <span data-i18n="hero.badge">open source · free forever</span>
+        </div>
+
+        <h1 id="hero-heading">
+          <span data-i18n="hero.heading1">Learn from YouTube,</span><br />
+          <span class="gradient-text" data-i18n="hero.heading2">even offline.</span>
+        </h1>
+
+        <p class="hero-tagline" data-i18n="hero.tagline">
+          LexiPath turns your YouTube playlists into structured learning paths — download any video for offline playback, track your progress, and study without an internet connection. No account. No subscription.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#download" class="btn btn-primary" data-i18n="hero.btn.download">
+            ⬇ Download for free
+          </a>
+          <a href="https://github.com/GRParasky/lexi-path-desktop"
+             class="btn btn-secondary"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="View LexiPath source code on GitHub (opens in new tab)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span data-i18n="hero.btn.github">View on GitHub</span>
+          </a>
+        </div>
+
+        <p class="hero-version">
+          <span data-i18n="hero.version">Current version:</span>
+          <span id="version-badge" class="version-loading">loading…</span>
+          &nbsp;·&nbsp;
+          <span data-i18n="hero.platforms">Windows, macOS &amp; Linux</span>
+        </p>
+
+        <div class="hero-mockup" role="img"
+             aria-label="LexiPath app interface showing a learning path with downloaded videos">
+          <div class="mockup-bar" aria-hidden="true">
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+            <span class="mockup-dot"></span>
+            <span class="mockup-title">LexiPath — Python Fundamentals</span>
+          </div>
+          <div class="mockup-body" aria-hidden="true">
+            <p class="line-comment"># Your learning path</p>
+            <p><span class="line-key">path</span>   &nbsp;<span class="line-value">"Python Fundamentals"</span></p>
+            <p><span class="line-key">videos</span> &nbsp;<span class="line-value">12 downloaded · 3 remaining</span></p>
+            <br />
+            <p class="line-comment"># Video status</p>
+            <p><span class="line-label">▶</span>&nbsp; 01 — Introduction to Python&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="line-value">✓ offline</span></p>
+            <p><span class="line-label">▶</span>&nbsp; 02 — Variables and Data Types&nbsp;&nbsp;<span class="line-value">✓ offline</span></p>
+            <p><span class="line-label">▶</span>&nbsp; 03 — Control Flow&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="line-value">✓ offline</span></p>
+            <p><span class="line-label">⬇</span>&nbsp; 04 — Functions&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="line-label">downloading 67%</span></p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="section section-alt"
+             aria-labelledby="features-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <span class="section-label" data-i18n="features.label">What you get</span>
+          <h2 id="features-heading" data-i18n="features.heading">Everything you need. Nothing you don't.</h2>
+          <p data-i18n="features.desc">Built for people who want to learn without distractions, paywalls, or an internet connection.</p>
+        </header>
+
+        <div class="features-grid" role="list">
+
+          <article class="feature-card" role="listitem">
+            <span class="feature-icon" aria-hidden="true">📥</span>
+            <h3 data-i18n="features.offline.title">Offline video playback</h3>
+            <p data-i18n="features.offline.desc">Download any video in your learning path and watch it without internet. Files are stored in your OS user folder and survive app updates.</p>
+          </article>
+
+          <article class="feature-card" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🗂️</span>
+            <h3 data-i18n="features.paths.title">Structured learning paths</h3>
+            <p data-i18n="features.paths.desc">Organise YouTube videos into named paths with custom ordering. Import from a YouTube playlist URL or add videos one by one.</p>
+          </article>
+
+          <article class="feature-card" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🌐</span>
+            <h3 data-i18n="features.languages.title">6 languages</h3>
+            <p data-i18n="features.languages.desc">The full UI is available in English, Brazilian Portuguese, Spanish, German, Italian, and French — pick yours in the top-right corner.</p>
+          </article>
+
+          <article class="feature-card" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🔄</span>
+            <h3 data-i18n="features.updates.title">Auto-update</h3>
+            <p data-i18n="features.updates.desc">LexiPath silently checks for new versions on launch. On Windows and Linux it downloads and applies updates in the background. macOS links you to the latest release page.</p>
+          </article>
+
+          <article class="feature-card" role="listitem">
+            <span class="feature-icon" aria-hidden="true">💻</span>
+            <h3 data-i18n="features.crossplatform.title">Truly cross-platform</h3>
+            <p data-i18n="features.crossplatform.desc">Native installers for Windows (.exe), macOS (.dmg), and Linux (.AppImage). No virtualisation, no Docker, no browser required.</p>
+          </article>
+
+          <article class="feature-card" role="listitem">
+            <span class="feature-icon" aria-hidden="true">🔓</span>
+            <h3 data-i18n="features.noaccount.title">No account needed</h3>
+            <p data-i18n="features.noaccount.desc">LexiPath creates a local user on first launch. No email, no password, no sign-up. Your data never leaves your machine.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section id="download" class="section" aria-labelledby="download-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <span class="section-label" data-i18n="download.label">Get LexiPath</span>
+          <h2 id="download-heading" data-i18n="download.heading">Download for your platform</h2>
+          <p data-i18n="download.desc">Free and open-source. Always the latest version.</p>
+        </header>
+
+        <div class="download-grid">
+
+          <div class="download-card">
+            <span class="download-icon" aria-hidden="true">🪟</span>
+            <h3>Windows</h3>
+            <span class="file-type" data-i18n="download.windows.filetype">.exe installer</span>
+            <a id="dl-windows"
+               href="https://github.com/GRParasky/lexi-path-desktop/releases/latest"
+               class="btn btn-primary"
+               download
+               aria-label="Download LexiPath for Windows"
+               data-i18n="download.windows.btn">
+              Download for Windows
+            </a>
+          </div>
+
+          <div class="download-card">
+            <span class="download-icon" aria-hidden="true">🍎</span>
+            <h3>macOS</h3>
+            <span class="file-type" data-i18n="download.mac.filetype">.dmg (Apple Silicon)</span>
+            <a id="dl-mac"
+               href="https://github.com/GRParasky/lexi-path-desktop/releases/latest"
+               class="btn btn-primary"
+               download
+               aria-label="Download LexiPath for macOS Apple Silicon"
+               data-i18n="download.mac.btn">
+              Download for macOS
+            </a>
+          </div>
+
+          <div class="download-card">
+            <span class="download-icon" aria-hidden="true">🐧</span>
+            <h3>Linux</h3>
+            <span class="file-type" data-i18n="download.linux.filetype">.AppImage</span>
+            <a id="dl-linux"
+               href="https://github.com/GRParasky/lexi-path-desktop/releases/latest"
+               class="btn btn-primary"
+               download
+               aria-label="Download LexiPath for Linux"
+               data-i18n="download.linux.btn">
+              Download for Linux
+            </a>
+          </div>
+
+        </div>
+
+        <p class="download-note" data-i18n-html="download.note">
+          All releases are available on the
+          <a href="https://github.com/GRParasky/lexi-path-desktop/releases"
+             target="_blank" rel="noopener noreferrer">GitHub Releases page</a>.
+          Checksums and release notes included.
+        </p>
+
+      </div>
+    </section>
+
+    <!-- CONTRIBUTORS -->
+    <section id="contributors" class="section section-alt"
+             aria-labelledby="contributors-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <span class="section-label" data-i18n="contributors.label">Open source</span>
+          <h2 id="contributors-heading" data-i18n="contributors.heading">Want to contribute?</h2>
+          <p data-i18n="contributors.desc">LexiPath is built with Django + React + Electron. Set up your dev environment in 5 steps and start shipping.</p>
+        </header>
+
+        <ol class="steps-list" aria-label="Development setup steps">
+
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">1</span>
+            <div class="step-content">
+              <h3 data-i18n="contributors.step1.title">Clone the repo</h3>
+              <p data-i18n-html="contributors.step1.desc"><code>git clone https://github.com/GRParasky/lexi-path-desktop.git</code> — the main branch is always stable.</p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">2</span>
+            <div class="step-content">
+              <h3 data-i18n="contributors.step2.title">Install backend dependencies</h3>
+              <p data-i18n-html="contributors.step2.desc"><code>cd backend &amp;&amp; pip install -r requirements.txt</code> — Python 3.11+ required. A virtual environment is recommended.</p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">3</span>
+            <div class="step-content">
+              <h3 data-i18n="contributors.step3.title">Install frontend dependencies</h3>
+              <p data-i18n-html="contributors.step3.desc"><code>cd frontend &amp;&amp; npm install</code> — Node 20+ required.</p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">4</span>
+            <div class="step-content">
+              <h3 data-i18n="contributors.step4.title">Run both servers</h3>
+              <p data-i18n-html="contributors.step4.desc">Open two terminals: run <code>python run_server.py</code> in <code>backend/</code> and <code>npm run dev</code> in <code>frontend/</code>.</p>
+            </div>
+          </li>
+
+          <li class="step-item">
+            <span class="step-num" aria-hidden="true">5</span>
+            <div class="step-content">
+              <h3 data-i18n="contributors.step5.title">Open a pull request</h3>
+              <p data-i18n="contributors.step5.desc">Fork the repo, create a branch, make your change, and open a PR. All PRs run automated builds on Windows, macOS, and Linux.</p>
+            </div>
+          </li>
+
+        </ol>
+
+        <div class="contributors-cta">
+          <a href="https://github.com/GRParasky/lexi-path-desktop"
+             class="btn btn-secondary"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="View LexiPath repository on GitHub (opens in new tab)">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+            </svg>
+            <span data-i18n="contributors.btn.repo">Browse the repo</span>
+          </a>
+          <a href="https://github.com/GRParasky/lexi-path-desktop/pulls"
+             class="btn btn-ghost"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="View open pull requests on GitHub (opens in new tab)"
+             data-i18n="contributors.btn.prs">
+            Open PRs
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ISSUES -->
+    <section id="issues" class="section" aria-labelledby="issues-heading">
+      <div class="container">
+
+        <header class="section-header">
+          <span class="section-label" data-i18n="issues.label">Feedback</span>
+          <h2 id="issues-heading" data-i18n="issues.heading">Found a bug? Have an idea?</h2>
+          <p data-i18n="issues.desc">All issue tracking happens on GitHub. Pick the right template and submit — we read everything.</p>
+        </header>
+
+        <div class="issues-grid">
+
+          <div class="issue-card bug">
+            <span class="issue-icon" aria-hidden="true">🐛</span>
+            <h3 data-i18n="issues.bug.title">Report a bug</h3>
+            <p data-i18n="issues.bug.desc">Something not working as expected? Open a bug report — include your OS, app version, and steps to reproduce.</p>
+            <a href="https://github.com/GRParasky/lexi-path-desktop/issues/new?template=bug_report.md"
+               class="btn btn-danger"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open a bug report on GitHub (opens in new tab)"
+               data-i18n="issues.bug.btn">
+              Report a bug
+            </a>
+          </div>
+
+          <div class="issue-card feature">
+            <span class="issue-icon" aria-hidden="true">💡</span>
+            <h3 data-i18n="issues.feature.title">Suggest a feature</h3>
+            <p data-i18n="issues.feature.desc">Have an idea that would make LexiPath better? Describe the problem you're solving and your proposed solution.</p>
+            <a href="https://github.com/GRParasky/lexi-path-desktop/issues/new?template=feature_request.md"
+               class="btn btn-ghost"
+               target="_blank"
+               rel="noopener noreferrer"
+               aria-label="Open a feature request on GitHub (opens in new tab)"
+               data-i18n="issues.feature.btn">
+              Suggest a feature
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+
+      <p class="footer-left">
+        <strong>LexiPath</strong> &nbsp;·&nbsp;
+        <span data-i18n="footer.version">Version</span> <span id="footer-version">…</span> &nbsp;·&nbsp;
+        <a href="https://github.com/GRParasky/lexi-path-desktop/blob/master/LICENSE"
+           target="_blank"
+           rel="noopener noreferrer"
+           data-i18n="footer.license">
+          MIT License
+        </a>
+      </p>
+
+      <ul class="footer-links" role="list">
+        <li><a href="https://github.com/GRParasky/lexi-path-desktop" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://github.com/GRParasky/lexi-path-desktop/releases" target="_blank" rel="noopener noreferrer">Releases</a></li>
+        <li><a href="https://github.com/GRParasky/lexi-path-desktop/blob/master/CHANGELOG.md" target="_blank" rel="noopener noreferrer">Changelog</a></li>
+      </ul>
+
+    </div>
+  </footer>
+
+  <!-- i18n must load before main.js so language is applied on first paint -->
+  <script src="i18n.js" defer></script>
+  <script src="main.js" defer></script>
+
+</body>
+</html>

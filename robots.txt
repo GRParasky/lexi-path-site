@@ -1,0 +1,10 @@
+# robots.txt — tells search engine crawlers what they can and cannot index.
+#
+# "User-agent: *" means "this rule applies to all crawlers" (Google, Bing, etc.)
+# "Allow: /" means "crawl everything" — we have nothing to hide on this page.
+# "Sitemap:" points Google directly to our sitemap so it finds all pages faster.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://grparasky.github.io/lexi-path-site/sitemap.xml
