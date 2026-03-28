@@ -80,9 +80,11 @@ const TRANSLATIONS = {
     'issues.bug.title':    'Report a bug',
     'issues.bug.desc':     'Something not working as expected? Open a bug report — include your OS, app version, and steps to reproduce.',
     'issues.bug.btn':      'Report a bug',
+    'issues.bug.body':     '**Describe the bug**\nA clear description of what the bug is.\n\n**Steps to reproduce**\n1. \n2. \n\n**Expected behavior**\n\n**Environment**\n- OS: \n- LexiPath version: \n- Installed via: .exe / .dmg / .AppImage',
     'issues.feature.title':'Suggest a feature',
     'issues.feature.desc': "Have an idea that would make LexiPath better? Describe the problem you're solving and your proposed solution.",
     'issues.feature.btn':  'Suggest a feature',
+    'issues.feature.body': '**Problem to solve**\nA clear description of the problem this feature would solve.\n\n**Proposed solution**\n\n**Alternatives considered**\n\n**Additional context**\n',
 
     'footer.version': 'Version',
     'footer.license': 'MIT License',
@@ -156,9 +158,11 @@ const TRANSLATIONS = {
     'issues.bug.title':    'Reportar um bug',
     'issues.bug.desc':     'Algo não funcionando como esperado? Abra um relatório de bug — inclua seu SO, versão do app e passos para reproduzir.',
     'issues.bug.btn':      'Reportar um bug',
+    'issues.bug.body':     '**Descreva o bug**\nUma descrição clara do que está acontecendo.\n\n**Passos para reproduzir**\n1. \n2. \n\n**Comportamento esperado**\n\n**Ambiente**\n- Sistema Operacional: \n- Versão do LexiPath: \n- Instalado via: .exe / .dmg / .AppImage',
     'issues.feature.title':'Sugerir uma funcionalidade',
     'issues.feature.desc': 'Tem uma ideia que tornaria o LexiPath melhor? Descreva o problema que está resolvendo e sua solução proposta.',
     'issues.feature.btn':  'Sugerir funcionalidade',
+    'issues.feature.body': '**Problema a resolver**\nUma descrição clara do problema que esta funcionalidade resolveria.\n\n**Solução proposta**\n\n**Alternativas consideradas**\n\n**Contexto adicional**\n',
 
     'footer.version': 'Versão',
     'footer.license': 'Licença MIT',
@@ -232,9 +236,11 @@ const TRANSLATIONS = {
     'issues.bug.title':    'Reportar un error',
     'issues.bug.desc':     '¿Algo no funciona como se esperaba? Abre un reporte de error — incluye tu SO, versión del app y pasos para reproducir.',
     'issues.bug.btn':      'Reportar un error',
+    'issues.bug.body':     '**Describe el error**\nUna descripción clara de lo que está pasando.\n\n**Pasos para reproducir**\n1. \n2. \n\n**Comportamiento esperado**\n\n**Entorno**\n- Sistema Operativo: \n- Versión de LexiPath: \n- Instalado mediante: .exe / .dmg / .AppImage',
     'issues.feature.title':'Sugerir una función',
     'issues.feature.desc': '¿Tienes una idea que haría LexiPath mejor? Describe el problema que estás resolviendo y tu solución propuesta.',
     'issues.feature.btn':  'Sugerir una función',
+    'issues.feature.body': '**Problema a resolver**\nUna descripción clara del problema que esta función resolvería.\n\n**Solución propuesta**\n\n**Alternativas consideradas**\n\n**Contexto adicional**\n',
 
     'footer.version': 'Versión',
     'footer.license': 'Licencia MIT',
@@ -308,9 +314,11 @@ const TRANSLATIONS = {
     'issues.bug.title':    'Fehler melden',
     'issues.bug.desc':     'Funktioniert etwas nicht wie erwartet? Öffne einen Bug-Report — gib dein OS, die App-Version und Schritte zur Reproduktion an.',
     'issues.bug.btn':      'Fehler melden',
+    'issues.bug.body':     '**Fehlerbeschreibung**\nEine klare Beschreibung des Problems.\n\n**Schritte zur Reproduktion**\n1. \n2. \n\n**Erwartetes Verhalten**\n\n**Umgebung**\n- Betriebssystem: \n- LexiPath-Version: \n- Installiert via: .exe / .dmg / .AppImage',
     'issues.feature.title':'Funktion vorschlagen',
     'issues.feature.desc': 'Hast du eine Idee, die LexiPath besser machen würde? Beschreibe das Problem und deine vorgeschlagene Lösung.',
     'issues.feature.btn':  'Funktion vorschlagen',
+    'issues.feature.body': '**Zu lösendes Problem**\nEine klare Beschreibung des Problems, das diese Funktion lösen würde.\n\n**Vorgeschlagene Lösung**\n\n**Betrachtete Alternativen**\n\n**Zusätzlicher Kontext**\n',
 
     'footer.version': 'Version',
     'footer.license': 'MIT-Lizenz',
@@ -384,9 +392,11 @@ const TRANSLATIONS = {
     'issues.bug.title':    'Segnala un bug',
     'issues.bug.desc':     "Qualcosa non funziona come previsto? Apri un bug report — includi il tuo OS, la versione dell'app e i passaggi per riprodurre il problema.",
     'issues.bug.btn':      'Segnala un bug',
+    'issues.bug.body':     '**Descrizione del bug**\nUna descrizione chiara del problema.\n\n**Passaggi per riprodurre**\n1. \n2. \n\n**Comportamento atteso**\n\n**Ambiente**\n- Sistema Operativo: \n- Versione di LexiPath: \n- Installato tramite: .exe / .dmg / .AppImage',
     'issues.feature.title':'Suggerisci una funzionalità',
     'issues.feature.desc': "Hai un'idea che renderebbe LexiPath migliore? Descrivi il problema che stai risolvendo e la tua soluzione proposta.",
     'issues.feature.btn':  'Suggerisci una funzionalità',
+    'issues.feature.body': '**Problema da risolvere**\nUna descrizione chiara del problema che questa funzionalità risolverebbe.\n\n**Soluzione proposta**\n\n**Alternative considerate**\n\n**Contesto aggiuntivo**\n',
 
     'footer.version': 'Versione',
     'footer.license': 'Licenza MIT',
@@ -460,9 +470,11 @@ const TRANSLATIONS = {
     'issues.bug.title':    'Signaler un bug',
     'issues.bug.desc':     "Quelque chose ne fonctionne pas comme prévu\u00a0? Ouvre un rapport de bug — inclus ton OS, la version de l'app et les étapes pour reproduire.",
     'issues.bug.btn':      'Signaler un bug',
+    'issues.bug.body':     '**Description du bug**\nUne description claire de ce qui se passe.\n\n**Étapes pour reproduire**\n1. \n2. \n\n**Comportement attendu**\n\n**Environnement**\n- Système d\'exploitation\u00a0: \n- Version de LexiPath\u00a0: \n- Installé via\u00a0: .exe / .dmg / .AppImage',
     'issues.feature.title':'Suggérer une fonctionnalité',
     'issues.feature.desc': 'Tu as une idée qui améliorerait LexiPath\u00a0? Décris le problème que tu résous et ta solution proposée.',
     'issues.feature.btn':  'Suggérer une fonctionnalité',
+    'issues.feature.body': '**Problème à résoudre**\nUne description claire du problème que cette fonctionnalité résoudrait.\n\n**Solution proposée**\n\n**Alternatives envisagées**\n\n**Contexte supplémentaire**\n',
 
     'footer.version': 'Version',
     'footer.license': 'Licence MIT',
@@ -495,6 +507,17 @@ function applyLanguage(lang) {
   // Sync the selector value (in case called programmatically)
   const select = document.getElementById('lang-select');
   if (select) select.value = lang;
+
+  // Update issue button hrefs with localised pre-filled body
+  const BASE = 'https://github.com/GRParasky/lexi-path-desktop/issues/new';
+  const bugBtn     = document.getElementById('issue-bug-btn');
+  const featureBtn = document.getElementById('issue-feature-btn');
+  if (bugBtn && t['issues.bug.body']) {
+    bugBtn.href = `${BASE}?labels=bug&body=${encodeURIComponent(t['issues.bug.body'])}`;
+  }
+  if (featureBtn && t['issues.feature.body']) {
+    featureBtn.href = `${BASE}?labels=enhancement&body=${encodeURIComponent(t['issues.feature.body'])}`;
+  }
 
   localStorage.setItem('lexi-lang', lang);
 }
