@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Changelog — LexiPath</title>
+  <meta name="description"
+        content="Full release history of LexiPath Desktop. See what's new in every version — bug fixes, new features, and platform improvements." />
+  <link rel="canonical" href="https://grparasky.github.io/lexi-path-site/changelog.html" />
+
+  <meta property="og:type"        content="website" />
+  <meta property="og:url"         content="https://grparasky.github.io/lexi-path-site/changelog.html" />
+  <meta property="og:title"       content="Changelog — LexiPath" />
+  <meta property="og:description" content="Full release history of LexiPath Desktop. See what's new in every version." />
+  <meta property="og:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:site_name"   content="LexiPath" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "LexiPath Changelog",
+    "description": "Full release history of LexiPath Desktop.",
+    "url": "https://grparasky.github.io/lexi-path-site/changelog.html",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "LexiPath",
+      "url": "https://grparasky.github.io/lexi-path-site/"
+    }
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* ── Changelog-specific styles ── */
+    .changelog-hero {
+      padding: var(--space-3xl) 0 var(--space-2xl);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .changelog-hero .section-label {
+      display: block;
+      margin-bottom: var(--space-sm);
+    }
+
+    .changelog-hero h1 {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--space-md);
+    }
+
+    .changelog-hero p {
+      color: var(--text-muted);
+      font-size: 1rem;
+      max-width: 520px;
+    }
+
+    .changelog-hero p a {
+      color: var(--accent);
+    }
+
+    /* Release list */
+    .release-list {
+      max-width: 720px;
+      margin-inline: auto;
+      padding: var(--space-3xl) 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-3xl);
+    }
+
+    .release {
+      position: relative;
+      padding-left: var(--space-xl);
+      border-left: 2px solid var(--border);
+    }
+
+    .release:first-child {
+      border-left-color: var(--accent);
+    }
+
+    .release::before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 6px;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: var(--border);
+    }
+
+    .release:first-child::before {
+      background-color: var(--accent);
+      box-shadow: 0 0 0 3px var(--accent-dim);
+    }
+
+    .release-header {
+      display: flex;
+      align-items: center;
+      gap: var(--space-md);
+      margin-bottom: var(--space-lg);
+      flex-wrap: wrap;
+    }
+
+    .release-version {
+      font-family: var(--font-mono);
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+
+    .release:first-child .release-version {
+      color: var(--accent);
+    }
+
+    .release-date {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .release-badge {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 2px 8px;
+      border-radius: 999px;
+    }
+
+    .badge-latest {
+      background-color: var(--accent-dim);
+      color: var(--accent);
+    }
+
+    .badge-fix {
+      background-color: rgba(248, 81, 73, 0.12);
+      color: #f85149;
+    }
+
+    .badge-feature {
+      background-color: rgba(63, 185, 80, 0.12);
+      color: var(--green);
+    }
+
+    .release-items {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-sm);
+      margin-bottom: var(--space-lg);
+    }
+
+    .release-item {
+      display: flex;
+      gap: var(--space-sm);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.6;
+    }
+
+    .release-item-type {
+      flex-shrink: 0;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-top: 2px;
+      height: fit-content;
+    }
+
+    .type-fix {
+      background-color: rgba(248, 81, 73, 0.12);
+      color: #f85149;
+    }
+
+    .type-feat {
+      background-color: rgba(63, 185, 80, 0.12);
+      color: var(--green);
+    }
+
+    .type-perf {
+      background-color: rgba(210, 153, 34, 0.15);
+      color: var(--orange);
+    }
+
+    .type-ci {
+      background-color: rgba(88, 166, 255, 0.12);
+      color: var(--accent);
+    }
+
+    .release-link {
+      font-size: 0.8rem;
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+    }
+
+    .release-link:hover {
+      color: var(--accent);
+    }
+  </style>
+</head>
+
+<body>
+
+  <header role="banner">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="/" class="nav-logo" aria-label="LexiPath — back to home">
+          🎓 LexiPath
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="/#features">Features</a></li>
+          <li><a href="/#download">Download</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/#contributors">Contribute</a></li>
+          <li><a href="/#download" class="nav-cta">Download</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <div class="container">
+
+      <header class="changelog-hero">
+        <span class="section-label">Release history</span>
+        <h1>Changelog</h1>
+        <p>
+          All notable changes to LexiPath Desktop, from newest to oldest.
+          Full release assets on the
+          <a href="https://github.com/GRParasky/lexi-path-desktop/releases"
+             target="_blank" rel="noopener noreferrer">GitHub Releases page</a>.
+        </p>
+      </header>
+
+      <ol class="release-list" aria-label="Release history" reversed>
+
+        <!-- v1.0.4 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.4</span>
+            <span class="release-date">March 28, 2026</span>
+            <span class="release-badge badge-latest">Latest</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.4 changes">
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>JWT access token expiry no longer breaks the session. The app now silently re-authenticates in the background when the 60-minute token window closes — learning paths and all API calls continue without interruption.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.4"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.4 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+        <!-- v1.0.3 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.3</span>
+            <span class="release-date">March 28, 2026</span>
+            <span class="release-badge badge-feature">Feature</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.3 changes">
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Full UI internationalisation — LexiPath now ships in 6 languages: English, Brazilian Portuguese, Spanish, German, Italian, and French.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Language selector added to the dashboard header. Choice persists across sessions via localStorage.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.3"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.3 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+        <!-- v1.0.2 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.2</span>
+            <span class="release-date">March 28, 2026</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.2 changes">
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Updated yt-dlp to handle recent YouTube format changes — video downloads were failing for some content after a YouTube-side update.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-perf">perf</span>
+              <span>Reduced installer sizes across all platforms through maximum compression and bundle refinement (LZMA/xz, UPX on Linux).</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.2"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.2 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+        <!-- v1.0.1 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.1</span>
+            <span class="release-date">March 27, 2026</span>
+            <span class="release-badge badge-feature">Feature</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.1 changes">
+            <li class="release-item">
+              <span class="release-item-type type-ci">ci</span>
+              <span>GitHub Actions CI — automated builds on Windows, macOS, and Linux triggered on every version tag.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Auto-updater via electron-updater. Windows and Linux download and apply updates silently in the background; macOS opens the releases page.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Videos stuck in "downloading" state no longer stay frozen after a restart — status resets to error on launch so you can retry.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.1 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+        <!-- v1.0.0 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.0</span>
+            <span class="release-date">March 27, 2026</span>
+            <span class="release-badge badge-feature">Initial release</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.0 changes">
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>First public release. Electron shell wrapping a local Django backend — the entire app runs on your machine with no server and no account required.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Offline YouTube video download and playback via yt-dlp. Downloaded files stored in the OS user data directory and survive app updates.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Automatic local authentication on first launch — no email, no password, no sign-up.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Native installers for Windows (.exe), macOS (.dmg, Apple Silicon), and Linux (.AppImage).</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.0"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.0 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+      </ol>
+    </div>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-left">
+        <strong>LexiPath</strong> &nbsp;·&nbsp;
+        <a href="https://github.com/GRParasky/lexi-path-desktop/blob/master/LICENSE"
+           target="_blank" rel="noopener noreferrer">MIT License</a>
+      </p>
+      <ul class="footer-links" role="list">
+        <li><a href="https://github.com/GRParasky/lexi-path-desktop" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="https://github.com/GRParasky/lexi-path-desktop/releases" target="_blank" rel="noopener noreferrer">Releases</a></li>
+        <li><a href="/">Home</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>
