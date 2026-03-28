@@ -494,9 +494,33 @@ function applyLanguage(lang) {
 }
 
 /* -----------------------------------------------------------
-   INIT — apply saved language on load, wire up the selector
+   DETECT BROWSER LANGUAGE
+   Maps navigator.languages entries to one of our supported
+   locales. Returns null if nothing matches.
+
+   Priority: exact match first (e.g. "pt-BR"), then language-
+   only match (e.g. "pt" → "pt-BR"), then null.
    ----------------------------------------------------------- */
-const savedLang = localStorage.getItem('lexi-lang') || 'en';
+const SUPPORTED = Object.keys(TRANSLATIONS); // ['en','pt-BR','es','de','it','fr']
+
+function detectBrowserLang() {
+  const candidates = navigator.languages || [navigator.language];
+  for (const locale of candidates) {
+    // 1. Exact match (e.g. "pt-BR")
+    if (SUPPORTED.includes(locale)) return locale;
+    // 2. Language-only match (e.g. "pt" → "pt-BR", "de-AT" → "de")
+    const lang = locale.split('-')[0];
+    const match = SUPPORTED.find(s => s.split('-')[0] === lang);
+    if (match) return match;
+  }
+  return null;
+}
+
+/* -----------------------------------------------------------
+   INIT — apply saved language on load, wire up the selector
+   Priority: 1) localStorage  2) browser locale  3) English
+   ----------------------------------------------------------- */
+const savedLang = localStorage.getItem('lexi-lang') || detectBrowserLang() || 'en';
 applyLanguage(savedLang);
 
 document.getElementById('lang-select')?.addEventListener('change', e => {
