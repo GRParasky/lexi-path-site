@@ -51,20 +51,60 @@
   <link rel="stylesheet" href="blog.css" />
 </head>
 
+
 <body>
 
   <header role="banner">
     <nav class="site-nav" aria-label="Main navigation">
       <div class="container nav-inner">
+
         <a href="../" class="nav-logo" aria-label="LexiPath — back to home">
           🎓 LexiPath
         </a>
-        <ul class="nav-links" role="list">
-          <li><a href="../#features">Features</a></li>
-          <li><a href="../#download">Download</a></li>
-          <li><a href="../#contributors">Contribute</a></li>
-          <li><a href="../#download" class="nav-cta">Download</a></li>
+
+        <button
+          id="nav-toggle"
+          class="nav-toggle"
+          aria-expanded="false"
+          aria-controls="nav-links"
+          aria-label="Open navigation menu"
+        >
+          <svg class="icon-menu" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+          <svg class="icon-close" width="24" height="24" viewBox="0 0 24 24"
+               fill="none" stroke="currentColor" stroke-width="2"
+               stroke-linecap="round" aria-hidden="true" hidden>
+            <line x1="18" y1="6" x2="6" y2="18"/>
+            <line x1="6" y1="6" x2="18" y2="18"/>
+          </svg>
+        </button>
+
+        <ul id="nav-links" class="nav-links" role="list">
+          <li><a href="../#features"      data-i18n="nav.features">Features</a></li>
+          <li><a href="../#download"      data-i18n="nav.download">Download</a></li>
+          <li><a href="../blog/"          data-i18n="nav.blog">Blog</a></li>
+          <li><a href="../changelog.html" data-i18n="nav.changelog">Changelog</a></li>
+          <li><a href="../#contributors"  data-i18n="nav.contribute">Contribute</a></li>
+          <li class="nav-lang-item">
+            <select id="lang-select" class="lang-select" aria-label="Select language">
+              <option value="en">🇺🇸 English</option>
+              <option value="pt-BR">🇧🇷 Português (BR)</option>
+              <option value="es">🇪🇸 Español</option>
+              <option value="de">🇩🇪 Deutsch</option>
+              <option value="it">🇮🇹 Italiano</option>
+              <option value="fr">🇫🇷 Français</option>
+            </select>
+          </li>
+          <li>
+            <a href="../#download" class="nav-cta" data-i18n="nav.cta">Download</a>
+          </li>
         </ul>
+
       </div>
     </nav>
   </header>
@@ -213,6 +253,9 @@
       </ul>
     </div>
   </footer>
+
+  <script src="../i18n.js" defer></script>
+  <script src="../main.js" defer></script>
 
 </body>
 </html>
