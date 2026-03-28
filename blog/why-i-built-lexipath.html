@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Why I Built LexiPath: YouTube Was Ruining My Learning</title>
+  <meta name="description"
+        content="I have ADHD and was trying to learn German from YouTube. The algorithm kept pulling me away. Notion was too complex. So I built LexiPath — a distraction-free, offline language learning app." />
+  <link rel="canonical" href="https://grparasky.github.io/lexi-path-site/blog/why-i-built-lexipath.html" />
+
+  <meta property="og:type"        content="article" />
+  <meta property="og:url"         content="https://grparasky.github.io/lexi-path-site/blog/why-i-built-lexipath.html" />
+  <meta property="og:title"       content="Why I Built LexiPath: YouTube Was Ruining My Learning" />
+  <meta property="og:description" content="I have ADHD and was trying to learn German from YouTube. The algorithm kept pulling me away. So I built the tool I actually needed." />
+  <meta property="og:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+  <meta property="og:locale"      content="en_US" />
+  <meta property="og:site_name"   content="LexiPath" />
+
+  <meta name="twitter:card"        content="summary_large_image" />
+  <meta name="twitter:title"       content="Why I Built LexiPath: YouTube Was Ruining My Learning" />
+  <meta name="twitter:description" content="I have ADHD and was trying to learn German from YouTube. The algorithm kept pulling me away. So I built the tool I actually needed." />
+  <meta name="twitter:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Why I Built LexiPath: YouTube Was Ruining My Learning",
+    "description": "I have ADHD and was trying to learn German from YouTube. The algorithm kept pulling me away. Notion was too complex. So I built LexiPath — a distraction-free, offline language learning app.",
+    "datePublished": "2026-03-28",
+    "dateModified": "2026-03-28",
+    "author": {
+      "@type": "Person",
+      "name": "GRParasky",
+      "url": "https://github.com/GRParasky"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "LexiPath",
+      "url": "https://grparasky.github.io/lexi-path-site/"
+    },
+    "url": "https://grparasky.github.io/lexi-path-site/blog/why-i-built-lexipath.html",
+    "inLanguage": "en",
+    "keywords": ["language learning", "learn German from YouTube", "ADHD learning", "offline language learning", "YouTube learning app", "language learning roadmap"]
+  }
+  </script>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎓</text></svg>" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="blog.css" />
+</head>
+
+<body>
+
+  <header role="banner">
+    <nav class="site-nav" aria-label="Main navigation">
+      <div class="container nav-inner">
+        <a href="../" class="nav-logo" aria-label="LexiPath — back to home">
+          🎓 LexiPath
+        </a>
+        <ul class="nav-links" role="list">
+          <li><a href="../#features">Features</a></li>
+          <li><a href="../#download">Download</a></li>
+          <li><a href="../#contributors">Contribute</a></li>
+          <li><a href="../#download" class="nav-cta">Download</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <article class="article-page" aria-labelledby="article-heading">
+      <div class="container container-narrow">
+
+        <!-- Article header -->
+        <header class="article-header">
+          <div class="article-meta">
+            <a href="index.html" class="article-back">← Blog</a>
+            <span class="post-date">March 28, 2026</span>
+            <span class="post-tag">Origin story</span>
+          </div>
+          <h1 id="article-heading">
+            Why I Built LexiPath: YouTube Was Ruining My Learning
+          </h1>
+          <p class="article-lead">
+            I have ADHD. I was trying to learn German. And YouTube — for all the incredible free content on it — kept sending me somewhere else entirely.
+          </p>
+        </header>
+
+        <!-- Article body -->
+        <div class="article-body">
+
+          <h2>The YouTube problem</h2>
+
+          <p>
+            YouTube is genuinely the best place on the internet to learn a language. There are entire university-level German courses on there, completely free — native speakers covering grammar, pronunciation, vocabulary, everything. The content exists and it's excellent.
+          </p>
+
+          <p>
+            The problem isn't the content. It's the platform around it.
+          </p>
+
+          <p>
+            Every time I finished a lesson and clicked the next video, something would intercept me first. A notification. A video in the sidebar. An autoplay suggestion that had nothing to do with German. One time I meant to click lesson 4 of a grammar series and ended up watching someone build a Minecraft clone in pure C for forty minutes. I'm not exaggerating — and if you have ADHD, you know exactly how that happens.
+          </p>
+
+          <p>
+            YouTube playlists were supposed to solve this. They don't, really. You're still inside YouTube, with the algorithm running in the background and the sidebar always visible, always tempting. The moment your guard drops, you're gone.
+          </p>
+
+          <h2>The Notion attempt</h2>
+
+          <p>
+            The obvious move was to get more organized. I tried Notion. I built a table with links to my German videos, descriptions, checkboxes for completion. It took me an hour to structure the page properly and I was pretty proud of it.
+          </p>
+
+          <p>
+            But Notion is documentation software. It's powerful and flexible, and that flexibility is exactly the problem — there are thirty ways to structure anything, and I ended up spending more time tweaking the layout than actually learning. Every time I opened it to watch a video I'd notice something I could improve about the structure and go down that rabbit hole instead.
+          </p>
+
+          <p>
+            What I needed was something with almost no flexibility. Give me the videos in the order I chose, let me watch them, let me check them off. That's it.
+          </p>
+
+          <h2>What I actually wanted</h2>
+
+          <p>
+            The idea was simple. A list of YouTube videos, in the exact sequence I decided, embedded so I could watch them without ever opening YouTube. A progress bar showing how far through the course I was. The ability to share the whole path with a friend — so they could follow the same sequence — or let them fork it and make their own version without touching mine.
+          </p>
+
+          <p>
+            Visually I imagined it like a flowchart. Cards connected in sequence, horizontal, each one a lesson. You move through them left to right. It's not a document. It's a path.
+          </p>
+
+          <p>
+            That image — a <em>path</em> through a <em>lexicon</em> — is where the name came from. LexiPath. A structured route through your language learning material.
+          </p>
+
+          <h2>Building the web version</h2>
+
+          <p>
+            I built the first version as a web app. Django for the backend, React for the interface. You paste a YouTube URL, the app fetches the title and thumbnail automatically, and it gets added as a card to your path. Reorder cards by dragging. Mark videos as watched. Share a path with a unique link. Clone someone else's path and make it your own.
+          </p>
+
+          <p>
+            No algorithm. No recommendations. No distractions. Just your path.
+          </p>
+
+          <h2>Then the commute problem</h2>
+
+          <p>
+            The web version worked well, but a new problem appeared: I wanted to study during my commute. Underground train, no reliable connection, sometimes no connection at all. Even with LexiPath organizing my paths, the videos still lived on YouTube's servers. No internet, no learning.
+          </p>
+
+          <p>
+            So I built the desktop version. The whole stack — Django, React, SQLite — runs locally on your machine, packaged with Electron. yt-dlp downloads the videos to your OS user folder. Once they're downloaded, you never need the internet again. The app auto-updates in the background on Windows and Linux. Your data survives every update.
+          </p>
+
+          <p>
+            No account. No sign-up. Open the app, build your path, study.
+          </p>
+
+          <h2>Who it's for</h2>
+
+          <p>
+            LexiPath is for anyone who wants to learn a language from YouTube without the platform getting in the way. It's especially useful if you get easily distracted — the app is deliberately minimal by design, not as a compromise.
+          </p>
+
+          <p>
+            There's no feed. No algorithm. No sidebar full of interesting things you shouldn't be watching right now. Just the path you built, your progress through it, and the videos waiting for you.
+          </p>
+
+          <p>
+            It's free. It's open-source. And it's already on your machine before the internet has a chance to intervene.
+          </p>
+
+        </div>
+
+        <!-- CTA -->
+        <aside class="article-cta" aria-label="Download LexiPath">
+          <p>LexiPath is free, open-source, and available for Windows, macOS, and Linux.</p>
+          <a href="../#download" class="btn btn-primary">⬇ Download for free</a>
+          <a href="https://github.com/GRParasky/lexi-path-desktop"
+             class="btn btn-secondary"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="View source code on GitHub (opens in new tab)">
+            View on GitHub
+          </a>
+        </aside>
+
+        <!-- Article footer nav -->
+        <nav class="article-nav" aria-label="Article navigation">
+          <a href="index.html" class="article-back">← Back to blog</a>
+        </nav>
+
+      </div>
+    </article>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p class="footer-left">
+        <strong>LexiPath</strong> &nbsp;·&nbsp;
+        <a href="https://github.com/GRParasky/lexi-path-desktop/blob/master/LICENSE"
+           target="_blank" rel="noopener noreferrer">MIT License</a>
+      </p>
+      <ul class="footer-links" role="list">
+        <li><a href="https://github.com/GRParasky/lexi-path-desktop" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+        <li><a href="../#download">Download</a></li>
+        <li><a href="../">Home</a></li>
+      </ul>
+    </div>
+  </footer>
+
+</body>
+</html>

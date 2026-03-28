@@ -16,6 +16,7 @@ const TRANSLATIONS = {
   en: {
     'nav.features':   'Features',
     'nav.download':   'Download',
+    'nav.blog':       'Blog',
     'nav.contribute': 'Contribute',
     'nav.issues':     'Issues',
     'nav.cta':        'Download',
@@ -90,6 +91,7 @@ const TRANSLATIONS = {
   'pt-BR': {
     'nav.features':   'Funcionalidades',
     'nav.download':   'Baixar',
+    'nav.blog':       'Blog',
     'nav.contribute': 'Contribuir',
     'nav.issues':     'Problemas',
     'nav.cta':        'Baixar',
@@ -164,6 +166,7 @@ const TRANSLATIONS = {
   es: {
     'nav.features':   'Funcionalidades',
     'nav.download':   'Descargar',
+    'nav.blog':       'Blog',
     'nav.contribute': 'Contribuir',
     'nav.issues':     'Problemas',
     'nav.cta':        'Descargar',
@@ -238,6 +241,7 @@ const TRANSLATIONS = {
   de: {
     'nav.features':   'Funktionen',
     'nav.download':   'Herunterladen',
+    'nav.blog':       'Blog',
     'nav.contribute': 'Beitragen',
     'nav.issues':     'Fehler melden',
     'nav.cta':        'Herunterladen',
@@ -312,6 +316,7 @@ const TRANSLATIONS = {
   it: {
     'nav.features':   'Funzionalità',
     'nav.download':   'Scarica',
+    'nav.blog':       'Blog',
     'nav.contribute': 'Contribuisci',
     'nav.issues':     'Segnalazioni',
     'nav.cta':        'Scarica',
@@ -386,6 +391,7 @@ const TRANSLATIONS = {
   fr: {
     'nav.features':   'Fonctionnalités',
     'nav.download':   'Télécharger',
+    'nav.blog':       'Blog',
     'nav.contribute': 'Contribuer',
     'nav.issues':     'Signaler',
     'nav.cta':        'Télécharger',

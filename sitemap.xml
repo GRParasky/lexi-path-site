@@ -1,20 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-  sitemap.xml — a machine-readable list of all pages on this site.
-  Search engines use this to discover and re-index pages faster.
-
-  For a single-page site like this one, the sitemap has exactly one <url>.
-
-  <loc>      — the canonical URL of the page
-  <lastmod>  — date of last significant change (ISO 8601 format: YYYY-MM-DD)
-  <changefreq> — hint to crawlers how often to re-check (monthly is fine for a landing page)
-  <priority> — relative importance vs other pages on this site (1.0 = max)
--->
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://grparasky.github.io/lexi-path-site/</loc>
     <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://grparasky.github.io/lexi-path-site/blog/</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://grparasky.github.io/lexi-path-site/blog/why-i-built-lexipath.html</loc>
+    <lastmod>2026-03-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
