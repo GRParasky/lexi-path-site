@@ -13,7 +13,7 @@
   <meta property="og:url"         content="https://grparasky.github.io/lexi-path-site/changelog.html" />
   <meta property="og:title"       content="Changelog — LexiPath" />
   <meta property="og:description" content="Full release history of LexiPath Desktop. See what's new in every version." />
-  <meta property="og:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+  <meta property="og:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.webp" />
   <meta property="og:locale"      content="en_US" />
   <meta property="og:site_name"   content="LexiPath" />
 
@@ -283,12 +283,112 @@
 
       <ol class="release-list" aria-label="Release history" reversed>
 
+        <!-- v1.1.1 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.1.1</span>
+            <span class="release-date">March 29, 2026</span>
+            <span class="release-badge badge-latest">Latest</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.1.1 changes">
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>SSL certificate errors in the packaged app — all HTTPS connections (yt-dlp stream extraction, downloads) failed with <code>CERTIFICATE_VERIFY_FAILED</code> inside the PyInstaller bundle. Fixed by adding <code>certifi</code> as a dependency and pointing Python's SSL stack to its bundled CA certificates at startup, before any network code runs.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.1.1"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.1.1 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+        <!-- v1.1.0 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.1.0</span>
+            <span class="release-date">March 29, 2026</span>
+            <span class="release-badge badge-feature">Feature</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.1.0 changes">
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Non-downloaded videos now stream directly inside the app — opening theater mode no longer shows a static fallback immediately. The player attempts to stream via a yt-dlp proxy first; "Download &amp; Watch" / "Watch on YouTube" only appear if streaming genuinely fails.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>DASH video streaming via ffmpeg — when YouTube serves separate video-only and audio-only DASH streams, the backend now invokes ffmpeg to merge them on-the-fly and pipe a fragmented MP4 directly to the browser's <code>&lt;video&gt;</code> element. Note: seeking is not supported in this mode.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>"Connecting to video…" loading state — a spinner with a localised label replaces the blank black rectangle while yt-dlp extracts the stream URL.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Specific download error messages — instead of a generic "Download failed", the user now sees why it failed: bot detection, age restriction, geo-block, Premium required, members-only, unavailable/private video, no format found. Reasons persist across restarts.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Automatic browser cookie retry for yt-dlp — when YouTube's bot detection blocks a request, yt-dlp retries using cookies from each installed browser in sequence (Firefox, Brave, Chrome, Chromium, Edge, Opera, Vivaldi, Safari) until one works.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>Native <code>lexipath://</code> protocol for local video — downloaded videos are served via a custom Electron URL scheme using Node.js, bypassing the Python backend for local playback. Eliminates the memory spike that caused backend crashes when seeking.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Backend crash when seeking a downloaded video — the previous range-request handler loaded entire requested ranges (potentially hundreds of MB) into RAM. Replaced with a 512 KB streaming generator, making memory usage constant regardless of file size.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Wrong error message for channel members-only videos — these were incorrectly reported as "YouTube Premium required". Fixed by separating the <code>members_only</code> reason from <code>premium_required</code>.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Delete confirmation buttons misaligned on card hover — "Yes, delete" and "Cancel" were right-aligned while the label above was centred. Fixed by splitting <code>.card-edit-actions</code> and <code>.card-confirm-actions</code> into separate CSS rules.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.1.0"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.1.0 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
+        <!-- v1.0.8 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.8</span>
+            <span class="release-date">March 29, 2026</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.8 changes">
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Playlist URLs now play and download correctly — when a video URL contained <code>&amp;list=…</code>, yt-dlp was processing the entire playlist instead of the individual video. Fixed by adding <code>noplaylist: True</code> to all yt-dlp calls.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>yt-dlp format selector corrected — recent yt-dlp changed <code>format='best'</code> to prefer merged DASH streams. When called without download, merged formats have no direct URL, triggering a 502. Fixed by explicitly requiring a single combined A/V stream.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.8"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.8 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
         <!-- v1.0.7 -->
         <li class="release">
           <div class="release-header">
             <span class="release-version">v1.0.7</span>
             <span class="release-date">March 29, 2026</span>
-            <span class="release-badge badge-latest">Latest</span>
             <span class="release-badge badge-fix">Bug fix</span>
           </div>
           <ul class="release-items" aria-label="v1.0.7 changes">

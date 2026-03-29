@@ -15,7 +15,7 @@
   <meta property="og:url"         content="https://grparasky.github.io/lexi-path-site/" />
   <meta property="og:title"       content="LexiPath — Language Learning App for YouTube, Offline" />
   <meta property="og:description" content="Build structured language learning paths from YouTube playlists. Download videos for offline study. Learn Spanish, German, French and more — free, open-source, no account needed." />
-  <meta property="og:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+  <meta property="og:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.webp" />
   <meta property="og:image:width"  content="1200" />
   <meta property="og:image:height" content="630" />
   <meta property="og:locale"      content="en_US" />
@@ -24,7 +24,7 @@
   <meta name="twitter:card"        content="summary_large_image" />
   <meta name="twitter:title"       content="LexiPath — Language Learning App for YouTube, Offline" />
   <meta name="twitter:description" content="Build structured language learning paths from YouTube playlists. Download videos for offline study. Learn Spanish, German, French and more — free, open-source, no account needed." />
-  <meta name="twitter:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.png" />
+  <meta name="twitter:image"       content="https://grparasky.github.io/lexi-path-site/img/og-image.webp" />
 
   <script type="application/ld+json">
   {
@@ -216,26 +216,66 @@
           <span data-i18n="hero.platforms">Windows, macOS &amp; Linux</span>
         </p>
 
-        <div class="hero-mockup" role="img"
-             aria-label="LexiPath app interface showing a German language learning path with downloaded videos">
-          <div class="mockup-bar" aria-hidden="true">
-            <span class="mockup-dot"></span>
-            <span class="mockup-dot"></span>
-            <span class="mockup-dot"></span>
-            <span class="mockup-title">LexiPath — German for Beginners</span>
-          </div>
-          <div class="mockup-body" aria-hidden="true">
-            <p class="line-comment"># Your learning path</p>
-            <p><span class="line-key">path</span>   &nbsp;<span class="line-value">"German for Beginners"</span></p>
-            <p><span class="line-key">videos</span> &nbsp;<span class="line-value">14 downloaded · 2 remaining</span></p>
-            <br />
-            <p class="line-comment"># Video status</p>
-            <p><span class="line-label">▶</span>&nbsp; 01 — German Alphabet &amp; Pronunciation&nbsp;&nbsp;<span class="line-value">✓ offline</span></p>
-            <p><span class="line-label">▶</span>&nbsp; 02 — Essential Greetings &amp; Phrases&nbsp;&nbsp;&nbsp;&nbsp;<span class="line-value">✓ offline</span></p>
-            <p><span class="line-label">▶</span>&nbsp; 03 — Numbers, Colors &amp; Basic Vocab&nbsp;&nbsp;&nbsp;<span class="line-value">✓ offline</span></p>
-            <p><span class="line-label">⬇</span>&nbsp; 04 — Present Tense Verbs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="line-label">downloading 71%</span></p>
-          </div>
-        </div>
+        <div class="hero-mockup" role="region" aria-roledescription="carousel" aria-label="LexiPath app screenshots">
+
+          <div class="carousel">
+            <div class="carousel-track" id="carousel-track">
+
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="1 of 5: German A1 Learning Path">
+                <img src="img/mockup/path-german-a1.webp"
+                     alt="LexiPath showing a German A1 learning path with video thumbnails"
+                     width="720" decoding="async" />
+              </div>
+
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="2 of 5: Dashboard" aria-hidden="true">
+                <img src="img/mockup/dashboard.webp"
+                     alt="LexiPath dashboard showing multiple language learning paths"
+                     width="720" loading="lazy" decoding="async" />
+              </div>
+
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="3 of 5: Offline Download" aria-hidden="true">
+                <img src="img/mockup/path-german-a1-offline.webp"
+                     alt="LexiPath showing a video downloaded for offline viewing"
+                     width="720" loading="lazy" decoding="async" />
+              </div>
+
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="4 of 5: Progress Tracking" aria-hidden="true">
+                <img src="img/mockup/path-german-a1-progress.webp"
+                     alt="LexiPath showing progress tracking on a German A1 learning path"
+                     width="720" loading="lazy" decoding="async" />
+              </div>
+
+              <div class="carousel-slide" role="group" aria-roledescription="slide" aria-label="5 of 5: Theater Mode" aria-hidden="true">
+                <img src="img/mockup/theater-mode.webp"
+                     alt="LexiPath theater mode with in-app video playback"
+                     width="720" loading="lazy" decoding="async" />
+              </div>
+
+            </div><!-- /.carousel-track -->
+
+            <button class="carousel-btn carousel-btn--prev" id="carousel-prev" aria-label="Previous screenshot">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"/>
+              </svg>
+            </button>
+            <button class="carousel-btn carousel-btn--next" id="carousel-next" aria-label="Next screenshot">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                   stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"/>
+              </svg>
+            </button>
+
+            <div class="carousel-dots" role="tablist" aria-label="Screenshot navigation">
+              <button class="carousel-dot" role="tab" aria-selected="true"  aria-label="Screenshot 1: German A1 Learning Path" data-index="0"></button>
+              <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Screenshot 2: Dashboard"               data-index="1"></button>
+              <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Screenshot 3: Offline Download"        data-index="2"></button>
+              <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Screenshot 4: Progress Tracking"       data-index="3"></button>
+              <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Screenshot 5: Theater Mode"            data-index="4"></button>
+            </div>
+
+          </div><!-- /.carousel -->
+        </div><!-- /.hero-mockup -->
 
       </div>
     </section>

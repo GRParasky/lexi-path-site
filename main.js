@@ -113,8 +113,94 @@ function initMobileNav() {
 }
 
 /* -----------------------------------------------------------
+   HERO SCREENSHOT CAROUSEL
+   ----------------------------------------------------------- */
+function initCarousel() {
+  const track   = document.getElementById('carousel-track');
+  const label   = document.getElementById('carousel-label');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const dots    = Array.from(document.querySelectorAll('.carousel-dot'));
+  const slides  = Array.from(document.querySelectorAll('.carousel-slide'));
+
+  if (!track || slides.length === 0) return;
+
+  const TITLES = [
+    'German A1 Learning Path',
+    'Dashboard',
+    'Download for Offline Use',
+    'Progress Tracking',
+    'Theater Mode',
+  ];
+
+  const INTERVAL = 4000;
+  let current = 0;
+  let timer;
+
+  function slideWidth() {
+    return track.parentElement.offsetWidth;
+  }
+
+  function updateSlideWidths() {
+    const w = slideWidth();
+    slides.forEach(s => { s.style.width = w + 'px'; });
+  }
+
+  function goTo(index) {
+    index = (index + slides.length) % slides.length;
+
+    track.style.transform = `translateX(-${index * slideWidth()}px)`;
+
+    slides.forEach((slide, i) => {
+      slide.setAttribute('aria-hidden', i === index ? 'false' : 'true');
+    });
+
+    dots.forEach((dot, i) => {
+      dot.setAttribute('aria-selected', String(i === index));
+    });
+
+    if (label) label.textContent = TITLES[index] ?? TITLES[0];
+
+    current = index;
+  }
+
+  function startTimer() {
+    clearInterval(timer);
+    timer = setInterval(() => goTo(current + 1), INTERVAL);
+  }
+
+  function stopTimer() {
+    clearInterval(timer);
+  }
+
+  prevBtn?.addEventListener('click', () => { goTo(current - 1); startTimer(); });
+  nextBtn?.addEventListener('click', () => { goTo(current + 1); startTimer(); });
+
+  dots.forEach(dot => {
+    dot.addEventListener('click', () => { goTo(Number(dot.dataset.index)); startTimer(); });
+  });
+
+  const carousel = track.closest('.carousel');
+  carousel?.addEventListener('mouseenter', stopTimer);
+  carousel?.addEventListener('mouseleave', startTimer);
+
+  // Arrow-key navigation when any carousel control is focused
+  carousel?.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft')  { goTo(current - 1); startTimer(); }
+    if (e.key === 'ArrowRight') { goTo(current + 1); startTimer(); }
+  });
+
+  updateSlideWidths();
+  window.addEventListener('resize', () => { updateSlideWidths(); goTo(current); });
+
+  goTo(0);
+  startTimer();
+}
+
+/* -----------------------------------------------------------
    ENTRY POINT
    Runs after DOM is ready (script has `defer` attribute).
    ----------------------------------------------------------- */
 initDownloadSection();
 initMobileNav();
+initCarousel();
