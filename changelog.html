@@ -283,12 +283,42 @@
 
       <ol class="release-list" aria-label="Release history" reversed>
 
+        <!-- v1.0.7 -->
+        <li class="release">
+          <div class="release-header">
+            <span class="release-version">v1.0.7</span>
+            <span class="release-date">March 29, 2026</span>
+            <span class="release-badge badge-latest">Latest</span>
+            <span class="release-badge badge-fix">Bug fix</span>
+          </div>
+          <ul class="release-items" aria-label="v1.0.7 changes">
+            <li class="release-item">
+              <span class="release-item-type type-fix">fix</span>
+              <span>Videos now play inside the app again — the "Watch on YouTube" workaround from v1.0.6 is replaced with real in-app playback. Opening theater mode now streams the video directly inside LexiPath without any browser redirect.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-feat">feat</span>
+              <span>New backend endpoint proxies the YouTube CDN stream through the local Django server, bypassing iframe embedding restrictions (Error 153) entirely — the browser talks to <code>localhost</code>, not youtube.com.</span>
+            </li>
+            <li class="release-item">
+              <span class="release-item-type type-perf">perf</span>
+              <span>Extracted CDN URLs are cached for 30 minutes — seeking works instantly without re-calling yt-dlp on every Range request. Falls back to the YouTube link if the backend is unreachable.</span>
+            </li>
+          </ul>
+          <a class="release-link"
+             href="https://github.com/GRParasky/lexi-path-desktop/releases/tag/v1.0.7"
+             target="_blank" rel="noopener noreferrer"
+             aria-label="View v1.0.7 release on GitHub (opens in new tab)">
+            View on GitHub →
+          </a>
+        </li>
+
         <!-- v1.0.6 -->
         <li class="release">
           <div class="release-header">
             <span class="release-version">v1.0.6</span>
             <span class="release-date">March 28, 2026</span>
-            <span class="release-badge badge-latest">Latest</span>
+            <span class="release-badge badge-feature">Feature</span>
             <span class="release-badge badge-feature">Feature</span>
             <span class="release-badge badge-fix">Bug fix</span>
           </div>
